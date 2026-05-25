@@ -1,0 +1,11 @@
+name: Test CI Workflow
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 运行测试
+        run: echo "Hello CI! This is a test run."
