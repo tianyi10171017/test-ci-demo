@@ -1,11 +1,12 @@
-name: Test CI Workflow
+name: Test CI
 on:
   push:
     branches: [ main ]
-
+  workflow_dispatch: # 新增这一行，开启手动触发
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: 运行测试
-        run: echo "Hello CI! This is a test run."
+      - uses: actions/checkout@v4
+      - name: Test
+        run: echo "CI run ok"
